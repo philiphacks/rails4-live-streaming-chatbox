@@ -1,0 +1,10 @@
+Hello! Welcome to chatzy
+
+<ul id="messages">
+</ul>
+
+<%= form_for Message.new, remote: true do |f| %>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <%= f.text_field :content %>
+  <%= f.submit "Send", id: "message_submit" %>
+<% end %>
