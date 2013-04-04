@@ -15,12 +15,10 @@ class MessagesController < ApplicationController
   end
 
   def events
-    logger.debug "new threadddd" 
     response.headers['Content-Type'] = 'text/event-stream'
     sse = Streamer::SSE.new(response.stream)
     redis = Redis.new
     redis.subscribe('messages.create') do |on|
-      logger.debug "subscribbeee"
       on.message do |event, data|
         sse.write(data, event: 'messages.create')
       end
