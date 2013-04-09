@@ -1,0 +1,61 @@
+
+8824  ruby         95.9 00:31.97 3/1  0    15+  209+  70M+   23M    75M+   77M+   2458M+ 8823 8823 running  501  44958+
+
+Philip-De-Smedts-MacBook:live_streaming philip$ ab -r -n 10000 -c 100 -T 'application/x-www-form-urlencoded' -g out3.dat -p ../live_streaming/post http://127.0.0.1:8080/messages
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            8080
+
+Document Path:          /messages
+Document Length:        1 bytes
+
+Concurrency Level:      100
+Time taken for tests:   80.925 seconds
+Complete requests:      10000
+Failed requests:        0
+Write errors:           0
+Total transferred:      4880000 bytes
+Total POSTed:           2220000
+HTML transferred:       10000 bytes
+Requests per second:    123.57 [#/sec] (mean)
+Time per request:       809.246 [ms] (mean)
+Time per request:       8.092 [ms] (mean, across all concurrent requests)
+Transfer rate:          58.89 [Kbytes/sec] received
+                        26.79 kb/s sent
+                        85.68 kb/s total
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.7      0      59
+Processing:   267  805  70.2    785    1258
+Waiting:      266  805  70.1    784    1257
+Total:        272  805  70.1    785    1260
+
+Percentage of the requests served within a certain time (ms)
+  50%    785
+  66%    795
+  75%    807
+  80%    820
+  90%    887
+  95%    962
+  98%   1032
+  99%   1076
+ 100%   1260 (longest request)
